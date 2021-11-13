@@ -79,3 +79,6 @@ p{
 .text-dark{
     color: var(--color-dark);
 }
+.text-title{
+    text-shadow: 1px 1px var(--color-light);
+}
