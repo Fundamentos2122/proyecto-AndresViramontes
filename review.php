@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(!array_key_exists("nombre_usuario", $_SESSION)){
+
+        header("Location: http://localhost/Proyecto/login.php");
+        exit();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +16,21 @@
     <link rel="stylesheet" href="css/framework.css">
     <title>Reseñas</title>
 </head>
-<body class="container-fluid container-xl">
+<body class="container-fluid container-xl" style="background-color: #191d20;;">
+<div class="container div-primary">
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand">Gamer Geek</a>
+        <a href="index.php" class="navbar-brand">Gamer Geek</a>
         <button class="navbar-toggle btn btn-danger" type="button">|||</button>
 
         <div class="navbar-collapse">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        Inicio
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link">
-                        Login
-                    </a>
-                </li>
+            <?php 
+                include("./utilities/controles1.php");
+                ?>
+
+                <?php
+                  include("./utilities/controles2.php");
+                ?>
             </ul>
         </div>
     </nav>
@@ -47,6 +54,7 @@
         </div>
         <div class="col-2 col-lg-2"></div>
     </div>
+</div>
     
 </body>
 </html>

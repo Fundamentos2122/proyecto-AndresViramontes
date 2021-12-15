@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(array_key_exists("nombre_usuario", $_SESSION)){
+        header("Location: http://localhost/Proyecto/index.php");
+        exit();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +15,21 @@
     <link rel="stylesheet" href="css/framework.css">
     <title>Login</title>
 </head>
-<body class="container-fluid container-xl">
-    <div class="div-primary">
+<body class="container-fluid container-xl" style="background-color: #191d20;;">
+    <div class="container div-primary">
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand">Gamer Geek</a>
+        <a href="index.php" class="navbar-brand">Gamer Geek</a>
         <button class="navbar-toggle btn btn-danger" type="button">M</button>
 
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">
+                    <a href="index.php" class="nav-link">
                         Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="siginup.html" class="nav-link">
+                    <a href="siginup.php" class="nav-link">
                         Sign Up
                     </a>
                 </li>
@@ -30,27 +38,26 @@
     </nav>
 
     <div class="row" >
-        <div class="col-2 col-lg-4"></div>
-        <div class="col-8 col-lg-4">
+        <div class="col-12">
             <div class="form">
-                <form class="form">
-                    <label class="h5" for="username">Nombre de usuario</label>
+                <form action="./controllers/loginController.php" class="form" method ="POST">
+                    <input type="hidden" name="_method" value="POST">
+                    <label class="h5" for="nombre_usuario">Nombre de usuario</label>
                     <br>
-                    <input type="text" name="username" required>
+                    <input type="text" name="nombre_usuario" required>
                      <br>
-                     <label class="h5" for="password">Password</label>
+                     <label class="h5" for="contra">Password</label>
                      <br>
-                    <input type="password" name="password" required >
+                    <input type="password" name="contra" required >
                     <br><br><br>
                     <input class="submit btn btn-danger" type="submit" value="Login">
                 </form>
             </div>
             <div >
                 <label for=""style="display: inline;">Si no tienes usurio registrate aqui:</label>
-                <a href="siginup.html">Sigin Up</a>
+                <a href="siginup.php">Sigin Up</a>
             </div>
         </div>
-        <div class="col-2 col-lg-4 "></div>
     </div>
 
 </div>

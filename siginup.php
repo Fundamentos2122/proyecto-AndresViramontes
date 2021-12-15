@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(array_key_exists("nombre_usuario", $_SESSION){
+        header("Location: http://localhost/Proyecto/index.php");
+        exit();
+    })
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
     <link rel="stylesheet" href="css/framework.css">
     <title>Sing Up</title>
 </head>
-<body class="container-fluid container-xl">
+<body class="container-fluid container-xl" style="background-color: #191d20;;">
     <nav class="navbar">
         <a href="index.html" class="navbar-brand">Gamer Geek</a>
         <button class="navbar-toggle btn btn-danger" type="button">|||</button>
@@ -33,13 +41,17 @@
         <div class="col-8 col-lg-4">
             <div class="form">
                 <form class="form">
-                    <label class="h5" for="username">Nombre de usuario</label>
+                <label class="h5" for="nombre">Nombre</label>
                     <br>
-                    <input type="text" name="username" required>
+                    <input type="text" name="nombre" required>
                      <br>
-                     <label class="h5" for="password">Password</label>
+                    <label class="h5" for="nombre_usuario">Nombre de usuario</label>
+                    <br>
+                    <input type="text" name="Nombre usuario" required>
                      <br>
-                    <input type="password" name="password" required >
+                     <label class="h5" for="contra">Password</label>
+                     <br>
+                    <input type="password" name="contra" required >
                     <br>
                      <label class="h5" for="email">Email</label>
                      <br>

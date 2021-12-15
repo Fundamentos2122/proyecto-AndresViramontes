@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +10,10 @@
     <link rel="stylesheet" href="css/framework.css">
     <title>Juego</title>
 </head>
-<body class="container-fluid container-xl">
-    <div class="div-primary">
+<body class="container-fluid container-xl" style="background-color: #191d20;;">
+<div class="container div-primary">
         <nav class="navbar">
-            <a href="index.html" class="navbar-brand">Gamer Geek</a>
+            <a href="index.php" class="navbar-brand">Gamer Geek</a>
             <button class="navbar-toggle btn btn-danger" type="button">|||</button>
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
@@ -18,26 +21,13 @@
                         <label for="search" class="h6" style="color: antiquewhite;"> Busqueda</label>
                         <input type="search" name="search" style="border-radius: 5%;">
                     </li>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">
-                            Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">
-                            Admin
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="addGame.html" class="dropdown-item">Agregar juego</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link">
-                            Login
-                        </a>
-                    </li>
+                    <?php 
+                include("./utilities/controles1.php");
+                ?>
+
+                <?php
+                  include("./utilities/controles2.php");
+                ?>
                 </ul>
             </div>
         </nav>
@@ -65,14 +55,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime, voluptatem nisi fugit dignissimos eius, temporibus at quae magnam sint voluptatum aperiam sed dolor molestias culpa praesentium? Ab, dolorem eum.
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat esse ducimus vitae itaque voluptas numquam fugiat dolor distinctio. Perferendis inventore, magni mollitia et nostrum dicta? Quasi natus fugiat tenetur deleniti?
                     </p>
-                    <a href="review.html" class="btn btn-secondary" style="display: flex; align-self: flex-end;">Agregar reseña</a>
+                    <a href="review.php" class="btn btn-secondary" style="display: flex; align-self: flex-end;">Agregar reseña</a>
                 </div>
                 <div class="info-2 conntainer-md border-top">
                     <h5 class="h5">Reseñas</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime, voluptatem nisi fugit dignissimos eius, temporibus at quae magnam sint voluptatum aperiam sed dolor molestias culpa praesentium? Ab, dolorem eum.
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat esse ducimus vitae itaque voluptas numquam fugiat dolor distinctio. Perferendis inventore, magni mollitia et nostrum dicta? Quasi natus fugiat tenetur deleniti?
                     </p>
-                    <button class="btn btn-secondary" style="display: flex; align-self: flex-end;">Eliminar reseña</button>
+                    <?php include("./utilities/eliminaRe.php");?>
                 </div>
             </div>
             </div>

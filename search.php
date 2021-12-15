@@ -7,7 +7,7 @@
     <title>Busqueda</title>
     <link rel="stylesheet" href="css/framework.css">
 </head>
-<body class="container-fluid container-xl">
+<body class="container-fluid container-xl" style="background-color: #191d20;;">
     <nav class="navbar">
         <a href="index.html" class="navbar-brand">Gmaer Geek</a>
         <button class="navbar-toggle btn btn-danger" type="button">|||</button>

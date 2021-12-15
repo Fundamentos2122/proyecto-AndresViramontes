@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 .div-primary{
-    background-image: linear-gradient(to bottom right,var(--color-secondary-darker), var(--color-light-clear));
+   background-color: cornsilk;
     width: 100%;
     min-height: 100vh;
     padding: -1em;
