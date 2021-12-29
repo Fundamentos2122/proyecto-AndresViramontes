@@ -74,7 +74,7 @@ class Usuario{
         $usuario["fecha_nacimiento"]=$this->getFechaNacimiento();
         $usuario["tipo_rol"]=$this->getTipoRol();
 
-        echo json_encode($alumno);
+        echo json_encode($usuario);
     }
 
 }

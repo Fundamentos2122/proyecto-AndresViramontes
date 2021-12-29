@@ -1,42 +1,42 @@
 <?php
-class Game{
+class Review{
     private $_id_re;
     private $_id_game;
-    private $_review;
+    private $_reviewT;
 
 
-    public function __construct($id,$cve_unica,$nombre_completo,$fecha_nacimiento,$foto){
-        $this->setId($id);
-        $this->setCveUnica($cve_unica);
-        $this->setNombreCompleto($nombre_completo);
-        $this->setFechaNacimiento($fecha_nacimiento);
-        $this->setFoto($foto);
+    public function __construct($id_re,$id_game,$reviewT){
+        $this->setIdRe($id_re);
+        $this->setIdGame($id_game);
+        $this->setReview($reviewT);
+        
     }
 
-    public function getId(){
-        return $this ->_id;
+    public function getIdRe(){
+        return $this ->_id_re;
     }
-    public function setId($id){
-        $this ->_id = $id;
+    public function setIdRe($id_re){
+        $this ->_id_re = $id_re;
     }
-    public function getCveUnica(){
-        return $this ->_cve_unica;
+    public function getIdGame(){
+        return $this ->_id_game;
     }
-    public function setCveUnica($cve_unica){
-        $this ->_cve_unica = $cve_unica;
+    public function setIdGame($id_game){
+        $this ->_id_game = $id_game;
     }
-    public function getNombreCompleto(){
-        return $this ->_nombre_completo;
+    public function getReview(){
+        return $this ->_reviewT;
     }
-    public function setNombreCompleto($nombre_completo){
-        $this ->_nombre_completo = $nombre_completo;
+    public function setReview($reviewT){
+        $this ->_reviewT = $reviewT;
     }
 
     public function returnJson(){
-        $alumno = array();
-        $alumno["id"] =  $this->getId();
-        $alumno["cve_unica"]=$this->getCveUnica();
-        echo json_encode($alumno);
+        $review = array();
+        $review["id_review"]=$this->getIdRe();
+        $review["id_game"] =$this->getIdGame();
+        $review["reviewT"]=$this->getReview();
+        echo json_encode($review);
     }
 
 }

@@ -30,12 +30,12 @@ catch(PDOException $e){
             }
     
             try{
-                $query = $connection->prepare('INSERT INTO game VALUES (NULL,:nombre_game, :desarrolladora, :sinopsis, :portada,fecha_publicacion)');
+                $query = $connection->prepare('INSERT INTO game VALUES (NULL,:nombre_game, :desarrolladora, :sinopsis, :portada ,:fecha_publicacion)');
                 $query->bindParam(':nombre_game',$nombre_game, PDO::PARAM_STR);
                 $query->bindParam(':desarrolladora',$desarrolladora, PDO::PARAM_STR);
                 $query->bindParam(':sinopsis',$sinopsis, PDO::PARAM_STR);
-                $query->bindParam(':foto',$foto, PDO::PARAM_STR);
-                $query->bindParam(':fecha_nacimiento',$fecha_nacimiento, PDO::PARAM_STR);
+                $query->bindParam(':portada',$foto, PDO::PARAM_STR);
+                $query->bindParam('::fecha_publicacion',$fecha_publicacion, PDO::PARAM_STR);
                 
                 $query->execute();
     
@@ -44,7 +44,7 @@ catch(PDOException $e){
                     exit();
                 }
     
-                header("Location: http://localhost/Proyectp/index.php");
+                header("Location: http://localhost/Proyecto/index.php");
     
             }
             catch(PDOException){
